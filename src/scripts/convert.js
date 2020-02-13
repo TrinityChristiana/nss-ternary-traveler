@@ -1,5 +1,6 @@
 import dataManager from './data.js';
 import DOMManager from './DOMManager.js';
+import eventManager from "./eventManager.js"
 const convert = {
 	runIt() {
         document.getElementById("card-container").innerHTML = "";
@@ -9,8 +10,12 @@ const convert = {
 				const condObj = this.smallerObj(element);
 				const HTMLText = this.objToHtml(condObj);
 				DOMManager.renderPlaces(HTMLText, condObj.id);
-			});
-			DOMManager.renderPlacesOptions();
+            });
+            
+            DOMManager.renderPlacesOptions();
+            data.forEach(element => {
+                eventManager.addReviewEvt(element.id)
+            })
 		});
 	},
 	objToHtml(obj) {
@@ -18,18 +23,20 @@ const convert = {
 		let htmlText = `
         <div class="card" id="card--${obj.id}">
                     <div class="content">
-                      <div class="header">
+                      <div class="header" id="header--${obj.id}">
                       ${obj.name} - ${obj.place}
+                      <div class="ui basic red delete button"></div>
                       </div>
-                      <div class="meta">
+                      <div class="meta cost" id="cost--${obj.id}">
                       $${obj.cost}
                       </div>
-                      <div class="description">
+                      <div class="description" id="description--${obj.id}">
                       ${obj.description}
                       </div>
                     </div>
-                    <div class="extra content review">
-                      ${reviewHTML}
+                    <div class="extra content">
+                      <div class="review" id="review--${obj.id}">${reviewHTML}</div>
+                      
                     </div>
                   </div>
               </div>

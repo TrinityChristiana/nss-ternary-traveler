@@ -16,6 +16,23 @@ const dataManager = {
 			},
 			body: JSON.stringify(interestsObj)
 		});
+    },
+    deleteInterest(id){
+        console.log(id)
+        return fetch(`http://localhost:8088/interests/${id}`, {
+			// Replace "url" with your API's URL
+			method: 'DELETE'
+		});
+    },
+    patchInterest(obj, id){
+        return fetch(`http://localhost:8088/interests/${id}`, {
+			// Replace "url" with your API's URL
+            method: 'PATCH',
+            headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(obj)
+		});
     }
 }
 

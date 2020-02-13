@@ -23,54 +23,22 @@
       "name": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
       "cost": 0,
-      "review": ""
-    },
-    {
-      "id": 1,
-      "placeId": 1,
-      "name": "Local Market",
-      "description": "Local market where you can purchase local products and try the local food",
-      "cost": 0,
-      "review": "text"
-    },
-    {
-      "placeId": 2,
-      "name": "asda",
-      "description": "asda",
-      "cost": 233,
-      "review": "",
-      "id": 2
-    },
-    {
-      "placeId": 1,
-      "name": "sdf",
-      "description": "asda",
-      "cost": 23,
-      "review": "",
-      "id": 3
+      "review": "te"
     },
     {
       "placeId": 2,
       "name": "sdfa",
       "description": "sda",
-      "cost": 2345,
-      "review": "",
+      "cost": 334,
+      "review": "Add Reviewasdasdasasdasasdas",
       "id": 4
-    },
-    {
-      "placeId": 1,
-      "name": "asda",
-      "description": "asda",
-      "cost": 33,
-      "review": "",
-      "id": 6
     },
     {
       "placeId": 1,
       "name": "asd",
       "description": "asd",
-      "cost": 213,
-      "review": "",
+      "cost": 45,
+      "review": "Add Reviewasdasdas",
       "id": 7
     },
     {
@@ -80,14 +48,6 @@
       "cost": 213,
       "review": "",
       "id": 8
-    },
-    {
-      "placeId": 3,
-      "name": "asd",
-      "description": "asd",
-      "cost": 213,
-      "review": "",
-      "id": 9
     },
     {
       "placeId": 2,
@@ -118,7 +78,7 @@
       "name": "asd",
       "description": "asda",
       "cost": 123,
-      "review": "",
+      "review": "Add Reviewasdasd",
       "id": 14
     },
     {

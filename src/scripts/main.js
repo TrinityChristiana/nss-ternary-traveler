@@ -6,8 +6,10 @@ eventManager.runIt();
 
 
 
-// TODO: Edit only cost/review
-// TODO: add delete to cards
+// TODO: Edit only desc/name/place/
+// TODO: Only have one edit input open
+
+// TODO: Edit button
 // TODO: allow users to search using typing places dropdown
 // TODO: Edit entire entry
 // TODO: add option for user to add new place/delete maybe...
