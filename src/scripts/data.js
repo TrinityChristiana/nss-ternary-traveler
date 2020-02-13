@@ -18,7 +18,6 @@ const dataManager = {
 		});
 	},
 	deleteInterest(id) {
-		console.log(id);
 		return fetch(`http://localhost:8088/interests/${id}`, {
 			// Replace "url" with your API's URL
 			method: 'DELETE'

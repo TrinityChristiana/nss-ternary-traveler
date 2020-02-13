@@ -18,14 +18,6 @@
   ],
   "interests": [
     {
-      "id": 1,
-      "placeId": 2,
-      "name": "Local Market",
-      "description": "Local market where you can purchase local products and try the local food",
-      "cost": 0,
-      "review": "te"
-    },
-    {
       "placeId": 2,
       "name": "a",
       "description": "asd",
@@ -34,7 +26,7 @@
       "id": 8
     },
     {
-      "placeId": 2,
+      "placeId": 3,
       "name": "asd",
       "description": "asd",
       "cost": 213,

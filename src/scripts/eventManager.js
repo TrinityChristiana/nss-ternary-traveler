@@ -47,7 +47,7 @@ const eventManager = {
 						document.getElementById('modal-content').innerHTML = `
                         <p>Are you sure you want to delete inteset <b>"${interestName}"</b></p>
                         `;
-						$('.ui.basic.modal')
+						$('.ui.mini.modal')
 							.modal('setting', {
 								onApprove: function() {
 									DOMManager.deleteInterest(parentId);
@@ -94,11 +94,9 @@ const eventManager = {
 									return element;
 								}
 							});
-							// console.log()
 							return placeObj[0].id;
 						})
 						.then(placeId => {
-							// console.log(placeId)
 							dataManager
 								.patchInterest(
 									`{"placeId": ${placeId}}`,

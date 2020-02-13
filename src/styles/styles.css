@@ -77,3 +77,8 @@ body {
     margin: 0;
     overflow: hidden;
 }
+
+.modal {
+    display: flex;
+    justify-content: center;
+}
