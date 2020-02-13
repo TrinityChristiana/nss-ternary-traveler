@@ -9,7 +9,6 @@ const DOMManager = {
 		document.getElementById('card-container').innerHTML += htmlText;
 	},
 	renderPlacesOptions(string) {
-		console.log(string);
 		const optionsHTML = document.getElementById(string);
 		optionsHTML.innerHTML = `<option>Place</option>`;
 
@@ -31,31 +30,76 @@ const DOMManager = {
 				.getElementById('card-container')
 				.querySelector('#cost-text') != null
 		) {
-			alert('Please save or discard cost first');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard cost first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#review-text') != null
 		) {
-			alert('Please save or discard Review');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard Review first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#description-text') != null
 		) {
-			alert('Please save or discard Description');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard description first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#name-text') != null
 		) {
-			alert('Please save or discard Name');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard name first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#place-text') != null
 		) {
-			alert('Please save or discard place');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard place first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else {
 			const reviewNode = document.getElementById(reviewId);
 			const review = reviewNode.innerText;
@@ -71,7 +115,6 @@ const DOMManager = {
 				'review',
 				`<div class="review" id="${reviewId}">${review}</div>`
 			);
-			console.log(review);
 		}
 	},
 	editCost(costId) {
@@ -80,33 +123,77 @@ const DOMManager = {
 				.getElementById('card-container')
 				.querySelector('#cost-text') != null
 		) {
-			alert('Please save or discard cost first');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard cost first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#review-text') != null
 		) {
-			alert('Please save or discard Review');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard Review first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#description-text') != null
 		) {
-			alert('Please save or discard Description');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard description first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#name-text') != null
 		) {
-			alert('Please save or discard Name');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard name first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#place-text') != null
 		) {
-			alert('Please save or discard place');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard place first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else {
-			console.log(costId);
 			const costNode = document.getElementById(costId);
 			const cost = costNode.innerText.split('$').join('');
 
@@ -119,7 +206,6 @@ const DOMManager = {
         `;
 			eventManager.saveCostEvt(costId.split('--')[1]);
 			eventManager.discardCostEvt(costNode, cost, costId);
-			// console.log(review);
 		}
 	},
 	editDescription(descriptionId) {
@@ -128,32 +214,77 @@ const DOMManager = {
 				.getElementById('card-container')
 				.querySelector('#cost-text') != null
 		) {
-			alert('Please save or discard cost first');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard cost first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#review-text') != null
 		) {
-			alert('Please save or discard Review');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard Review first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#description-text') != null
 		) {
-			alert('Please save or discard Description');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard description first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#name-text') != null
 		) {
-			alert('Please save or discard Name');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard name first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#place-text') != null
 		) {
-			alert('Please save or discard place');
-		} else  {
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard place first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
+		} else {
 			const descriptionNode = document.getElementById(descriptionId);
 			const description = descriptionNode.innerText;
 			descriptionNode.innerHTML = `
@@ -170,7 +301,6 @@ const DOMManager = {
                 ${description}
                 </div>`
 			);
-			// console.log(review);
 		}
 	},
 	editName(nameId) {
@@ -179,31 +309,76 @@ const DOMManager = {
 				.getElementById('card-container')
 				.querySelector('#cost-text') != null
 		) {
-			alert('Please save or discard cost first');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard cost first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#review-text') != null
 		) {
-			alert('Please save or discard Review');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard Review first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#description-text') != null
 		) {
-			alert('Please save or discard Description');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard description first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#name-text') != null
 		) {
-			alert('Please save or discard Name');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard name first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#place-text') != null
 		) {
-			alert('Please save or discard place');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard place first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else {
 			const nameNode = document.getElementById(nameId);
 			const name = nameNode.innerText;
@@ -217,7 +392,6 @@ const DOMManager = {
 
 			eventManager.saveEvt(nameId.split('--')[1], 'name');
 			eventManager.discardEvt(nameNode, 'name', `${name}`);
-			// console.log(review);
 		}
 	},
 	editPlace(placeId) {
@@ -226,31 +400,76 @@ const DOMManager = {
 				.getElementById('card-container')
 				.querySelector('#cost-text') != null
 		) {
-			alert('Please save or discard cost first');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard cost first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#review-text') != null
 		) {
-			alert('Please save or discard Review');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard Review first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#description-text') != null
 		) {
-			alert('Please save or discard Description');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard description first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#name-text') != null
 		) {
-			alert('Please save or discard Name');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard name first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else if (
 			document
 				.getElementById('card-container')
 				.querySelector('#place-text') != null
 		) {
-			alert('Please save or discard place');
+			document.getElementById(
+				'alert-header'
+			).innerHTML = `Please save or discard place first`;
+			$('.ui.tiny.modal')
+				.modal('setting', {
+					onApprove: function() {
+						return true;
+					}
+				})
+				.modal('show');
 		} else {
 			const placeNode = document.getElementById(placeId);
 			const place = placeNode.innerText;
@@ -264,7 +483,6 @@ const DOMManager = {
 
 			eventManager.saveEvt(placeId.split('--')[1], 'place');
 			eventManager.discardEvt(placeNode, 'place', `${place}`);
-			// console.log(review);
 		}
 	}
 };

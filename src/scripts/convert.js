@@ -5,7 +5,6 @@ const convert = {
 	runIt() {
         document.getElementById('card-container').innerHTML = '';
 		dataManager.getAllData().then(data => {
-			console.log(data);
 			data.forEach(element => {
 				const condObj = this.smallerObj(element);
 				const HTMLText = this.objToHtml(condObj);
@@ -19,7 +18,6 @@ const convert = {
             document.getElementById("name").value = "";
             document.getElementById("description").value = "";
             document.getElementById("cost").value = "";
-            // document.getElementById("name").value = "";
 		});
 	},
 	objToHtml(obj) {
@@ -65,7 +63,6 @@ const convert = {
 	},
 	inputToObj(name, description, cost, where) {
 		let placeId = '';
-		console.log(where);
 		if (where !== 'Place') {
 			placeId = Number(where);
 		}
