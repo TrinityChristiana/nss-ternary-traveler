@@ -19,23 +19,15 @@
   "interests": [
     {
       "id": 1,
-      "placeId": 1,
+      "placeId": 2,
       "name": "Local Market",
       "description": "Local market where you can purchase local products and try the local food",
       "cost": 0,
       "review": "te"
     },
     {
-      "placeId": 1,
-      "name": "asd",
-      "description": "asd",
-      "cost": 45,
-      "review": "Add Reviewasdasdas",
-      "id": 7
-    },
-    {
       "placeId": 2,
-      "name": "asd",
+      "name": "a",
       "description": "asd",
       "cost": 213,
       "review": "",
@@ -48,14 +40,6 @@
       "cost": 213,
       "review": "",
       "id": 10
-    },
-    {
-      "placeId": 1,
-      "name": "asd",
-      "description": "asda",
-      "cost": 123,
-      "review": "",
-      "id": 13
     },
     {
       "placeId": 3,
@@ -83,11 +67,35 @@
     },
     {
       "placeId": 2,
+      "name": "dgfhvbm",
+      "description": "sds",
+      "cost": 22277,
+      "review": "Add Review",
+      "id": 18
+    },
+    {
+      "placeId": 1,
       "name": "asd",
-      "description": "asdas",
-      "cost": 2312,
+      "description": "asda",
+      "cost": 33,
+      "review": "Adhmm",
+      "id": 19
+    },
+    {
+      "placeId": 2,
+      "name": "as",
+      "description": "asd",
+      "cost": 343,
       "review": "",
-      "id": 17
+      "id": 20
+    },
+    {
+      "placeId": 1,
+      "name": "Name of place",
+      "description": "THis place was great!",
+      "cost": 45,
+      "review": "This pajkandas",
+      "id": 21
     }
   ]
 }

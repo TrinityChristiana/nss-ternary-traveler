@@ -1,3 +1,16 @@
+body {
+    background-color: rgba(168, 228, 228, 0.692);
+    color: rgb(34, 49, 49);
+}
+
+.button {
+    margin: 10px;
+}
+
+.place {
+    color: gray;
+}
+
 #form {
     display: flex;
     flex-direction: column;
@@ -7,6 +20,31 @@
 
 #top, #bottom {
     padding: 10px;
+}
+
+
+#description, #name, #cost, #submit-btn{
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+}
+
+#submit-btn {
+    font-size: 23px;
+}
+
+#card-container{
+    display: flex;
+
+    align-items: stretch;
+    justify-content: center;
+}
+
+.review, .description{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .card-header{
@@ -24,6 +62,14 @@
     overflow: hidden;
 }
 
+#name-text, #place-text {
+    width: 50%;
+}
+
+
+#review-text {
+    margin: 10px;
+}
 .header-icon{
     width: 35px !important;
     height: 35px;
