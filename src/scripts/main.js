@@ -8,7 +8,3 @@ $('.ui.dropdown')
   .dropdown({
     fullTextSearch: true
   })
-  
-
-  
-// TODO: add option for user to add new place/delete maybe...
