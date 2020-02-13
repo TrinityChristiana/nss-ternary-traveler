@@ -1,0 +1,93 @@
+{
+  "places": [
+    {
+      "id": 1,
+      "name": "Italy",
+      "visa_required": false
+    },
+    {
+      "id": 2,
+      "name": "Switzerland",
+      "visa_required": true
+    },
+    {
+      "id": 3,
+      "name": "France",
+      "visa_required": false
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "placeId": 1,
+      "name": "Local Market",
+      "description": "Local market where you can purchase local products and try the local food",
+      "cost": 0,
+      "review": "te"
+    },
+    {
+      "placeId": 1,
+      "name": "asd",
+      "description": "asd",
+      "cost": 45,
+      "review": "Add Reviewasdasdas",
+      "id": 7
+    },
+    {
+      "placeId": 2,
+      "name": "asd",
+      "description": "asd",
+      "cost": 213,
+      "review": "",
+      "id": 8
+    },
+    {
+      "placeId": 2,
+      "name": "asd",
+      "description": "asd",
+      "cost": 213,
+      "review": "",
+      "id": 10
+    },
+    {
+      "placeId": 1,
+      "name": "asd",
+      "description": "asda",
+      "cost": 123,
+      "review": "",
+      "id": 13
+    },
+    {
+      "placeId": 3,
+      "name": "asd",
+      "description": "asda",
+      "cost": 123,
+      "review": "Add Reviewasdasd",
+      "id": 14
+    },
+    {
+      "placeId": 1,
+      "name": "asd",
+      "description": "asd",
+      "cost": 23,
+      "review": "",
+      "id": 15
+    },
+    {
+      "placeId": 1,
+      "name": "asd",
+      "description": "asd",
+      "cost": 23,
+      "review": "",
+      "id": 16
+    },
+    {
+      "placeId": 2,
+      "name": "asd",
+      "description": "asdas",
+      "cost": 2312,
+      "review": "",
+      "id": 17
+    }
+  ]
+}
