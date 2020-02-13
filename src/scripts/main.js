@@ -7,7 +7,6 @@ eventManager.runIt();
 
 
 // TODO: Edit only desc/name/place/
-// TODO: Only have one edit input open
 
 // TODO: Edit button
 // TODO: allow users to search using typing places dropdown

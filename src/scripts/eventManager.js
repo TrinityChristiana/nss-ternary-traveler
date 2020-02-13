@@ -33,11 +33,13 @@ const eventManager = {
 		document
 			.getElementById(`card--${cardId}`)
 			.addEventListener('click', () => {
-				if (event.target.offsetParent !== null) {
+                if (event.target.offsetParent !== null) {
+
 					const parentId = event.target.offsetParent.id.split(
 						'--'
-					)[1];
-					if (event.target.classList.contains('delete')) {
+                    )[1];
+                    const deleteButton = event.target.classList.contains('delete') || event.target.classList.contains('x')
+					if (deleteButton) {
 						const interestName = document.getElementById(
 							`header--${cardId}`
 						).innerText;

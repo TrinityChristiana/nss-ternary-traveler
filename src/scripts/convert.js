@@ -1,21 +1,21 @@
 import dataManager from './data.js';
 import DOMManager from './DOMManager.js';
-import eventManager from "./eventManager.js"
+import eventManager from './eventManager.js';
 const convert = {
 	runIt() {
-        document.getElementById("card-container").innerHTML = "";
+		document.getElementById('card-container').innerHTML = '';
 		dataManager.getAllData().then(data => {
-            console.log(data)
+			console.log(data);
 			data.forEach(element => {
 				const condObj = this.smallerObj(element);
 				const HTMLText = this.objToHtml(condObj);
 				DOMManager.renderPlaces(HTMLText, condObj.id);
-            });
-            
-            DOMManager.renderPlacesOptions();
-            data.forEach(element => {
-                eventManager.addReviewEvt(element.id)
-            })
+			});
+
+			DOMManager.renderPlacesOptions();
+			data.forEach(element => {
+				eventManager.addReviewEvt(element.id);
+			});
 		});
 	},
 	objToHtml(obj) {
@@ -23,9 +23,11 @@ const convert = {
 		let htmlText = `
         <div class="card" id="card--${obj.id}">
                     <div class="content">
-                      <div class="header" id="header--${obj.id}">
-                      ${obj.name} - ${obj.place}
-                      <div class="ui basic red delete button"></div>
+                      <div class="header card-header" id="header--${obj.id}">
+                      <div class="header-text">${obj.name} - ${obj.place}</div>
+                      <div class="header-icon ui circular icon inverted red delete button"><i class="x icon"></i></div>
+                      
+                      
                       </div>
                       <div class="meta cost" id="cost--${obj.id}">
                       $${obj.cost}
@@ -46,7 +48,7 @@ const convert = {
 		return htmlText;
 	},
 	smallerObj(data) {
-        const {id, name, description, cost, review} = data;
+		const {id, name, description, cost, review} = data;
 		return {
 			id: id,
 			name: name,
@@ -58,17 +60,17 @@ const convert = {
 		};
 	},
 	inputToObj(name, description, cost, where) {
-        let placeId = "";
-        console.log(where)
-        if(where !== "Place"){
-            placeId = Number(where);
-        }
+		let placeId = '';
+		console.log(where);
+		if (where !== 'Place') {
+			placeId = Number(where);
+		}
 		return {
-            "placeId": placeId,
-            "name": name,
-            "description": description,
-            "cost": Number(cost),
-            "review": ""
+			placeId: placeId,
+			name: name,
+			description: description,
+			cost: Number(cost),
+			review: ''
 		};
 	}
 };

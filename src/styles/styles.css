@@ -8,3 +8,26 @@
 #top, #bottom {
     padding: 10px;
 }
+
+.card-header{
+    display: flex !important;
+    flex-direction: row;
+    margin: 0;
+    justify-content: space-between
+}
+
+.header-text{
+    display: inline;
+    width: 75% !important;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.header-icon{
+    width: 35px !important;
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}

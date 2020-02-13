@@ -26,14 +26,6 @@
       "review": "te"
     },
     {
-      "placeId": 2,
-      "name": "sdfa",
-      "description": "sda",
-      "cost": 334,
-      "review": "Add Reviewasdasdasasdasasdas",
-      "id": 4
-    },
-    {
       "placeId": 1,
       "name": "asd",
       "description": "asd",
@@ -56,14 +48,6 @@
       "cost": 213,
       "review": "",
       "id": 10
-    },
-    {
-      "placeId": 1,
-      "name": "asda",
-      "description": "asda",
-      "cost": 21,
-      "review": "",
-      "id": 11
     },
     {
       "placeId": 1,
