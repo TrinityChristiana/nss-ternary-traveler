@@ -33,12 +33,13 @@ const eventManager = {
 		document
 			.getElementById(`card--${cardId}`)
 			.addEventListener('click', () => {
-                if (event.target.offsetParent !== null) {
-
+				if (event.target.offsetParent !== null) {
 					const parentId = event.target.offsetParent.id.split(
 						'--'
-                    )[1];
-                    const deleteButton = event.target.classList.contains('delete') || event.target.classList.contains('x')
+					)[1];
+					const deleteButton =
+						event.target.classList.contains('delete') ||
+						event.target.classList.contains('x');
 					if (deleteButton) {
 						const interestName = document.getElementById(
 							`header--${cardId}`
@@ -57,48 +58,85 @@ const eventManager = {
 
 					if (event.target.classList.contains('review')) {
 						DOMManager.editReview(`review--${cardId}`);
-                    }
-                    
-                    if (event.target.classList.contains('cost')) {
+					}
 
+					if (event.target.classList.contains('cost')) {
 						DOMManager.editCost(`cost--${cardId}`);
-                    }
+					}
 
+					if (event.target.classList.contains('description')) {
+						DOMManager.editDescription(`description--${cardId}`);
+					}
+
+					if (event.target.classList.contains('name')) {
+						DOMManager.editName(`name--${cardId}`);
+					}
+
+					if (event.target.classList.contains('place')) {
+						DOMManager.editPlace(`place--${cardId}`);
+					}
 				}
 			});
 	},
-	saveReviewEvt(cardId) {
-		document.getElementById('save-review').addEventListener('click', () => {
-			const inputText = document.getElementById(`review-text`).value;
-			dataManager.patchInterest({review: inputText}, cardId).then(() => {
-				convert.runIt();
-				eventManager.runIt();
-			});
-		});
-	},
-	discardReviewEvt(reviewNode, review, reviewId) {
+	saveEvt(cardId, string) {
 		document
-			.getElementById('discard-review')
+			.getElementById(`save-${string}`)
 			.addEventListener('click', () => {
-				reviewNode.innerHTML = `<div class="review" id="${reviewId}">${review}</div>`;
+				const inputText = document.getElementById(`${string}-text`)
+					.value;
+
+				if (string == 'place') {
+					dataManager
+						.getPlaces()
+						.then(data => {
+							const placeObj = data.filter(element => {
+								if (inputText == element.id) {
+									return element;
+								}
+							});
+							// console.log()
+							return placeObj[0].id;
+						})
+						.then(placeId => {
+							// console.log(placeId)
+							dataManager
+								.patchInterest(
+									`{"placeId": ${placeId}}`,
+									cardId
+								)
+								.then(() => {
+									convert.runIt();
+									eventManager.runIt();
+								});
+						});
+				} else {
+					dataManager
+						.patchInterest(`{"${string}": "${inputText}"}`, cardId)
+						.then(() => {
+							convert.runIt();
+							eventManager.runIt();
+						});
+				}
 			});
-    },
-    saveCostEvt(cardId) {
+	},
+	discardEvt(node, string, htmlText) {
+		document
+			.getElementById(`discard-${string}`)
+			.addEventListener('click', () => {
+				node.innerHTML = htmlText;
+			});
+	},
+	saveCostEvt(cardId) {
 		document.getElementById('save-cost').addEventListener('click', () => {
 			const inputText = document.getElementById(`cost-text`).value;
-			dataManager.patchInterest({cost: Number(inputText)}, cardId).then(() => {
-				convert.runIt();
-				eventManager.runIt();
-			});
+			dataManager
+				.patchInterest({cost: Number(inputText)}, cardId)
+				.then(() => {
+					convert.runIt();
+					eventManager.runIt();
+				});
 		});
-	},
-	discardCostEvt(costNode, review, costId) {
-		document
-			.getElementById('discard-cost')
-			.addEventListener('click', () => {
-				costNode.innerHTML = `<div class="meta cost" id="${costId}">$${obj.cost}</div>`;
-			});
-    }
+	}
 };
 
 export default eventManager;

@@ -3,7 +3,7 @@ import DOMManager from './DOMManager.js';
 import eventManager from './eventManager.js';
 const convert = {
 	runIt() {
-		document.getElementById('card-container').innerHTML = '';
+        document.getElementById('card-container').innerHTML = '';
 		dataManager.getAllData().then(data => {
 			console.log(data);
 			data.forEach(element => {
@@ -12,10 +12,14 @@ const convert = {
 				DOMManager.renderPlaces(HTMLText, condObj.id);
 			});
 
-			DOMManager.renderPlacesOptions();
+			DOMManager.renderPlacesOptions("where-options");
 			data.forEach(element => {
 				eventManager.addReviewEvt(element.id);
-			});
+            });
+            document.getElementById("name").value = "";
+            document.getElementById("description").value = "";
+            document.getElementById("cost").value = "";
+            // document.getElementById("name").value = "";
 		});
 	},
 	objToHtml(obj) {
@@ -24,7 +28,7 @@ const convert = {
         <div class="card" id="card--${obj.id}">
                     <div class="content">
                       <div class="header card-header" id="header--${obj.id}">
-                      <div class="header-text">${obj.name} - ${obj.place}</div>
+                      <div class="header-text"><div class="name" id="name--${obj.id}">${obj.name}</div><div class="place" id="place--${obj.id}">${obj.place}</div></div>
                       <div class="header-icon ui circular icon inverted red delete button"><i class="x icon"></i></div>
                       
                       
