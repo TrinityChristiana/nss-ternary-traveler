@@ -6,7 +6,7 @@ Created: 02-13-2020 14:10:46 | Modified: 02-13-2020 14:10:46
 
 *This assignment is an individual exercise: [Directions here](directions.md)*
 
-Preview application here: linktoapplication
+Preview application here: https://trinity-ternary-traveler.netlify.com/
 
 ***
 
@@ -15,4 +15,8 @@ Preview application here: linktoapplication
 - This assignment allows user to track where they've been by inputing information in a form and reading past posts below the form. 
 
 ## Features
--Add features
+- User can only type numbers for cost
+
+- Places are populated by database
+
+- User can edit each part of card individually by clicking on element.
