@@ -134,7 +134,14 @@ const eventManager = {
 					eventManager.runIt();
 				});
 		});
-	}
+    },
+    discardCostEvt(costNode, cost, costId) {
+		document
+			.getElementById('discard-cost')
+			.addEventListener('click', () => {
+				costNode.innerHTML = `<div class="meta cost" id="${costId}">$${cost}</div>`;
+			});
+    }
 };
 
 export default eventManager;
