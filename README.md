@@ -1,6 +1,6 @@
 # Ternary Traveler
 
-Created: 02-13-2020 14:10:46 | Modified: 02-13-2020 14:10:46
+Created: 02-13-2020 14:10:46 | Modified: 02-13-2020 16:43:52
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/355485d0-6c60-4d87-972b-27f2bda7a895/deploy-status)](https://app.netlify.com/sites/trinity-ternary-traveler/deploys)
 
