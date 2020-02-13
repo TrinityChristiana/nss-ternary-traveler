@@ -17,15 +17,6 @@ Preview application here: https://trinity-ternary-traveler.netlify.com/
 ![](screenshots/cards.png)
 
 *Cards*
-
-
-
-
-
-
-
-
-
 ## Description
 ### This assignment allows user to track places of interest by inputing information in a form and reading past posts below the form in card form. 
 ***
