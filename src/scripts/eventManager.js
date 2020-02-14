@@ -37,10 +37,11 @@ const eventManager = {
 						.querySelector(element) != null
 				) {
 					state.isOnlyInput = false;
+					const elementName = element.split("-")[0].split("#")[1];
 					if (!isNotOkay) {
 						document.getElementById(
 							'alert-header'
-						).innerHTML = `Please save or discard ${element} first`;
+						).innerHTML = `Please save or discard ${elementName} first`;
 						$('.ui.tiny.modal')
 							.modal('setting', {
 								onApprove: function() {
@@ -51,7 +52,7 @@ const eventManager = {
 					} else {
 						document.getElementById(
 							'alert-header'
-						).innerHTML = `<div>There are empty fields</div><div>Please save or discard ${element} first</div>`;
+						).innerHTML = `<div>There are empty fields</div><div>Please save or discard ${elementName} first</div>`;
 						$('.ui.tiny.modal')
 							.modal('setting', {
 								onApprove: function() {
