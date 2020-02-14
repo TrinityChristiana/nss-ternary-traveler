@@ -20,12 +20,64 @@ const eventManager = {
 				where
 			);
 			const validated = validate.createFormChecker(interestObj);
-			if (!validated[0] && !validated[1]) {
+			const inputIdCheck = [
+				'#cost-text',
+				'#review-text',
+				'#description-text',
+				'#name-text',
+				'#place-text'
+			];
+			const state = {isOnlyInput: true};
+			const isNotOkay = validated[0] || validated[1];
+
+			inputIdCheck.forEach(element => {
+				if (
+					document
+						.getElementById('card-container')
+						.querySelector(element) != null
+				) {
+					state.isOnlyInput = false;
+					if (!isNotOkay) {
+						document.getElementById(
+							'alert-header'
+						).innerHTML = `Please save or discard ${element} first`;
+						$('.ui.tiny.modal')
+							.modal('setting', {
+								onApprove: function() {
+									return true;
+								}
+							})
+							.modal('show');
+					} else {
+						document.getElementById(
+							'alert-header'
+						).innerHTML = `<div>There are empty fields</div><div>Please save or discard ${element} first</div>`;
+						$('.ui.tiny.modal')
+							.modal('setting', {
+								onApprove: function() {
+									return true;
+								}
+							})
+							.modal('show');
+					}
+				}
+			});
+
+			if (!validated[0] && !validated[1] && state.isOnlyInput == true) {
 				dataManager
 					.addInterest(interestObj)
 					.then(() => convert.runIt());
-			} else {
-				alert('there are empty inputs!');
+			} 
+			else if (state.isOnlyInput == true && validated[0] && validated[1])  {
+				document.getElementById('alert-header').innerHTML =
+					'There are empty inputs!';
+				$('.ui.tiny.modal')
+					.modal('setting', {
+						onApprove: function() {
+							return true;
+						}
+					})
+					.modal('show');
 			}
 		});
 	},
@@ -57,23 +109,43 @@ const eventManager = {
 					}
 
 					if (event.target.classList.contains('review')) {
-						DOMManager.editReview(`review--${cardId}`);
+						DOMManager.editElement(
+							`review--${cardId}`,
+							'textarea',
+							'review'
+						);
 					}
 
 					if (event.target.classList.contains('cost')) {
-						DOMManager.editCost(`cost--${cardId}`);
+						DOMManager.editElement(
+							`cost--${cardId}`,
+							'text',
+							'Cost'
+						);
 					}
 
 					if (event.target.classList.contains('description')) {
-						DOMManager.editDescription(`description--${cardId}`);
+						DOMManager.editElement(
+							`description--${cardId}`,
+							'textarea',
+							'Description'
+						);
 					}
 
 					if (event.target.classList.contains('name')) {
-						DOMManager.editName(`name--${cardId}`);
+						DOMManager.editElement(
+							`name--${cardId}`,
+							'text',
+							'Name'
+						);
 					}
 
 					if (event.target.classList.contains('place')) {
-						DOMManager.editPlace(`place--${cardId}`);
+						DOMManager.editElement(
+							`place--${cardId}`,
+							'dropdown',
+							'Place'
+						);
 					}
 				}
 			});
@@ -134,14 +206,14 @@ const eventManager = {
 					eventManager.runIt();
 				});
 		});
-    },
-    discardCostEvt(costNode, cost, costId) {
+	},
+	discardCostEvt(costNode, cost, costId) {
 		document
 			.getElementById('discard-cost')
 			.addEventListener('click', () => {
 				costNode.innerHTML = `<div class="meta cost" id="${costId}">$${cost}</div>`;
 			});
-    }
+	}
 };
 
 export default eventManager;
