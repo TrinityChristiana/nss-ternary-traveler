@@ -99,14 +99,6 @@
     },
     {
       "placeId": 1,
-      "name": "SDFS",
-      "description": "SDFS",
-      "cost": 2345,
-      "review": "",
-      "id": 24
-    },
-    {
-      "placeId": 1,
       "name": "SDFSDF",
       "description": "DFS",
       "cost": 2345,
@@ -128,6 +120,14 @@
       "cost": 2345,
       "review": "",
       "id": 27
+    },
+    {
+      "placeId": 2,
+      "name": "sdf",
+      "description": "asd",
+      "cost": 1234,
+      "review": "",
+      "id": 28
     }
   ]
 }

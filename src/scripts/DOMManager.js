@@ -25,7 +25,7 @@ const DOMManager = {
 		});
 	},
 	editElement(elementId, inputType, elementName) {
-		// editElement(elementId, inputType, elementName(capitalized))
+
 		const inputIdCheck = [
 			'#cost-text',
 			'#review-text',
@@ -33,17 +33,19 @@ const DOMManager = {
 			'#name-text',
 			'#place-text'
 		];
+
 		const state = {isOnlyInput: true};
 		inputIdCheck.forEach(element => {
+			const inputName = element.split("-")[0].split("#")[1];
 			if (
 				document
-					.getElementById('card-container')
-					.querySelector(element) != null
-			) {
+				.getElementById('card-container')
+				.querySelector(element) != null
+				) {
 				state.isOnlyInput = false;
 				document.getElementById(
 					'alert-header'
-				).innerHTML = `Please save or discard ${element} first`;
+				).innerHTML = `Please save or discard ${inputName} first`;
 				$('.ui.tiny.modal')
 					.modal('setting', {
 						onApprove: function() {
